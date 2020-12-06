@@ -10,6 +10,8 @@
   text-align: center;
 }
 .card {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #333350;
@@ -95,11 +97,6 @@ li {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.col-2 {
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-}
-
 .fas {
   font-size: 60px;
   color: rgb(65, 193, 225);

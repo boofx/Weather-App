@@ -35,6 +35,7 @@ let p = document.querySelector("#day-time");
 p.innerHTML = `${day} ${date} ${month}, ${hour}:${minute}`;
 
 function showTempData(response) {
+  console.log(response.data);
   let temp = Math.round(response.data.main.temp);
   let cityName = document.querySelector("h1.main-city");
   cityName.innerHTML = response.data.name;

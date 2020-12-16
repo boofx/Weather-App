@@ -4,17 +4,11 @@
   border: 5px solid;
   border-radius: 5px;
   border-width: thin;
+  margin: 30px auto;
   padding-bottom: 50px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
-}
-.col-2 {
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #333350;
 }
 h1 {
   color: rgb(65, 193, 225);
@@ -30,6 +24,13 @@ h2 {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.card {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #333350;
 }
 #description {
   text-transform: capitalize;

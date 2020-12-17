@@ -27,18 +27,25 @@ let day = days[now.getDay()];
 let date = now.getDate();
 let month = months[now.getMonth()];
 let hour = now.getHours();
+if (hour < 10) {
+  minute = `0 ${hour}`;
+}
 let minute = new Date().getMinutes();
 if (minute < 10) {
-  minute = "0" + minute;
+  minute = `0 ${minute}`;
 }
 let p = document.querySelector("#day-time");
 p.innerHTML = `${day} ${date} ${month}, ${hour}:${minute}`;
 
 function showTempData(response) {
-  console.log(response.data);
   let temp = Math.round(response.data.main.temp);
   let cityName = document.querySelector("h1.main-city");
   cityName.innerHTML = response.data.name;
+  let icon = document.querySelector("#main-img");
+  icon.setAttribute(
+    `i`,
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   let currentTemperature = document.querySelector("#current-temp");
   currentTemperature.innerHTML = `${temp}°C`;
   document.querySelector("#min").innerHTML = `Min: ${Math.round(

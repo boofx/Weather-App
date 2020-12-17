@@ -38,7 +38,7 @@ let p = document.querySelector("#day-time");
 p.innerHTML = `${day} ${date} ${month}, ${hour}:${minute}`;
 
 function showTempData(response) {
-  let temp = Math.round(response.data.main.temp);
+  let temp = Math.round(celsius);
   let cityName = document.querySelector("h1.main-city");
   cityName.innerHTML = response.data.name;
   let icon = document.querySelector("#main-img");
@@ -51,7 +51,7 @@ function showTempData(response) {
   celsius = response.data.main.temp;
 
   let currentTemperature = document.querySelector("#current-temp");
-  currentTemperature.innerHTML = Math.round(celsius);
+  currentTemperature.innerHTML = `${temp}`;
   document.querySelector("#min").innerHTML = `Min: ${Math.round(
     response.data.main.temp_min
   )}°C`;
@@ -98,12 +98,27 @@ currentLocationButton.addEventListener("click", showPosition);
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temp");
+  celsiusLink.classList.add("active");
+  fahrenheit.classList.remove("active");
   let fahrenheitTemp = (celsius * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#current-temo");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  currentTemperature.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let currentTemperature = document.querySelector("#current-temp");
+  currentTemperature.innerHTML = Math.round(celsius);
 }
 
 let celsius = null;
 
 let fahrenheit = document.querySelector("fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+search("Melbourne");

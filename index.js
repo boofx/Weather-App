@@ -28,11 +28,11 @@ let date = now.getDate();
 let month = months[now.getMonth()];
 let hour = now.getHours();
 if (hour < 10) {
-  minute = `0 ${hour}`;
+  minute = `0${hour}`;
 }
 let minute = new Date().getMinutes();
 if (minute < 10) {
-  minute = `0 ${minute}`;
+  minute = `0${minute}`;
 }
 let p = document.querySelector("#day-time");
 p.innerHTML = `${day} ${date} ${month}, ${hour}:${minute}`;
@@ -43,11 +43,15 @@ function showTempData(response) {
   cityName.innerHTML = response.data.name;
   let icon = document.querySelector("#main-img");
   icon.setAttribute(
-    `i`,
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `fas fa-sun`,
+    (src =
+      "http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png")
   );
+
+  celsius = response.data.main.temp;
+
   let currentTemperature = document.querySelector("#current-temp");
-  currentTemperature.innerHTML = `${temp}°C`;
+  currentTemperature.innerHTML = Math.round(celsius);
   document.querySelector("#min").innerHTML = `Min: ${Math.round(
     response.data.main.temp_min
   )}°C`;
@@ -91,3 +95,15 @@ function showPosition() {
 }
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", showPosition);
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsius * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#current-temo");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let celsius = null;
+
+let fahrenheit = document.querySelector("fahrenheit");
+fahrenheit.addEventListener("click", showFahrenheitTemp);

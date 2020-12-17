@@ -38,17 +38,14 @@ let p = document.querySelector("#day-time");
 p.innerHTML = `${day} ${date} ${month}, ${hour}:${minute}`;
 
 function showTempData(response) {
-  let temp = Math.round(celsius);
+  let temp = Math.round(response.data.main.temp);
   let cityName = document.querySelector("h1.main-city");
   cityName.innerHTML = response.data.name;
   let icon = document.querySelector("#main-img");
   icon.setAttribute(
-    `fas fa-sun`,
-    (src =
-      "http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png")
+    "#fas fa-sun",
+    "http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
   );
-
-  celsius = response.data.main.temp;
 
   let currentTemperature = document.querySelector("#current-temp");
   currentTemperature.innerHTML = `${temp}`;
@@ -100,23 +97,23 @@ function showFahrenheitTemp(event) {
   event.preventDefault();
   let currentTemperature = document.querySelector("#current-temp");
   celsiusLink.classList.add("active");
-  fahrenheit.classList.remove("active");
-  let fahrenheitTemp = (celsius * 9) / 5 + 32;
+  fahrenheitLink.classList.remove("active");
+  let fahrenheitTemp = (temp * 9) / 5 + 32;
   currentTemperature.innerHTML = Math.round(fahrenheitTemp);
 }
 
 function showCelsiusTemp(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
-  fahrenheit.classList.remove("active");
+  fahrenheitLink.classList.remove("active");
   let currentTemperature = document.querySelector("#current-temp");
-  currentTemperature.innerHTML = Math.round(celsius);
+  currentTemperature.innerHTML = Math.round(temp);
 }
 
-let celsius = null;
+let temp = null;
 
-let fahrenheit = document.querySelector("fahrenheit");
-fahrenheit.addEventListener("click", showFahrenheitTemp);
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemp);

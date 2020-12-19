@@ -12,18 +12,18 @@
   max-width: 900px;
 }
 h1 {
-  color: rgb(11, 152, 187);
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
   text-align: left;
   margin-top: 40px;
 }
 h2 {
-  color: rgb(11, 152, 187);
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
   text-align: center;
-  margin-top: 5px;
+  margin-top: 50px;
   margin-bottom: 5px;
 }
 h3 {
@@ -77,11 +77,12 @@ li {
 .min-max {
   margin-top: 5px;
 }
-.con {
-  vertical-align: middle;
+#con {
+  text-align: center;
   color: white;
   font-weight: 500;
   font-size: 18px;
+  margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -111,4 +112,7 @@ strong {
 .git-link {
   display: block;
   margin-left: 510px;
+}
+.weather-forecast {
+  color: white;
 }

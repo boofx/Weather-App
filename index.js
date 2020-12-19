@@ -42,6 +42,9 @@ function formatHours(timestamp) {
   }
   return `${hour}:${minute}`;
 }
+let now = new Date();
+let dayTime = document.querySelector("#day-time");
+dayTime.innerHTML = formatDate(now);
 
 function showTempData(response) {
   let cityName = document.querySelector("h1.main-city");
@@ -123,8 +126,8 @@ function retrievePosition(position) {
 function showFahrenheitTemp(event) {
   event.preventDefault();
   let currentTemperature = document.querySelector("#current-temp");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemp = (celsius * 9) / 5 + 32;
   currentTemperature.innerHTML = Math.round(fahrenheitTemp);
 }

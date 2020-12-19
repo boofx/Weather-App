@@ -39,7 +39,8 @@
       </form>
       <div class="row">
         <div class="col-4">
-          <h2 id="current-temp">
+          <h2>
+            <span id="current-temp"></span>
             <span id="units">
               <a href="#" id="celsius" class="active">°C |</a>
               <a href="#" id="fahrenheit">°F</a>
@@ -50,8 +51,8 @@
           <img src="" alt="Sunny" id="main-img" />
           <p class="min-max"><span id="min"></span> <span id="max"></span></p>
         </div>
-        <div class="col-4">
-          <span class="con">
+        <div class="col-4" id="con">
+          <span>
             <li>Humidity <span id="humidity"></span></li>
             <li>Wind <span id="wind"></span></li>
           </span>

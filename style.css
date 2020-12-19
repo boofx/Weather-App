@@ -4,44 +4,51 @@
   border: 5px solid;
   border-radius: 5px;
   border-width: thin;
-  margin: 30px auto;
-  padding-bottom: 50px;
+  margin-top: 30px;
+  padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
+  max-width: 900px;
 }
 h1 {
-  color: rgb(65, 193, 225);
+  color: rgb(11, 152, 187);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 70px;
+  font-size: 40px;
   text-align: left;
-  padding-top: 40px;
+  margin-top: 40px;
 }
 h2 {
-  color: rgb(65, 193, 225);
+  color: rgb(11, 152, 187);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 70px;
+  font-size: 40px;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+h3 {
+  font-size: 16px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .card {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #333350;
 }
-#description {
+#current-data {
   text-transform: capitalize;
-  margin-top: 5px;
+  padding-top: 40px;
   color: white;
   font-weight: 500;
   font-size: 18px;
+  text-align: center;
 }
 
 #look-up {
-  margin: 30px auto;
+  margin: 10px auto;
   background-color: #333350;
   border-radius: 5px;
   font-weight: 500;
@@ -52,7 +59,7 @@ button :hover {
   cursor: pointer;
 }
 #current-location {
-  margin: 30px auto;
+  margin: 10px auto;
   background-color: #333350;
   border-radius: 5px;
   font-weight: 500;
@@ -68,46 +75,40 @@ li {
   list-style: none;
 }
 .min-max {
-  margin-top: 30px;
-}
-.current-temp {
-  font-size: 50px;
-  margin-top: 40px;
-}
-.temp-unit {
-  font-size: 16px;
-  position: sticky;
-  margin-top: 20px;
-  vertical-align: center;
+  margin-top: 5px;
 }
 .con {
-  text-align: center;
+  vertical-align: middle;
   color: white;
   font-weight: 500;
   font-size: 18px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 #units {
+  margin-top: 10px;
+  position: relative;
   font-size: 20px;
 }
 #main-img {
   font-size: 60px;
   margin-left: 15px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
 }
-.fas {
-  font-size: 60px;
-  color: rgb(65, 193, 225);
+.img {
+  align-content: center;
+  max-width: 50px;
   display: block;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 15px;
   margin-bottom: 10px;
 }
-.temp {
-  margin-left: 15px;
+strong {
+  margin-right: auto;
+  margin-left: auto;
 }
 .git-link {
-  margin-top: 40px;
-  margin-left: 200px;
+  display: block;
+  margin-left: 510px;
 }

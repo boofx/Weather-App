@@ -23,10 +23,14 @@
 
   <body>
     <div class="container">
-      <h1 class="main-city"></h1>
-      <div>
-        <p id="day-time"></p>
-        <p id="description"></p>
+      <div class="row">
+        <div class="col-4">
+          <h1 class="main-city"></h1>
+        </div>
+        <div class="col-4" id="current-data">
+          <p id="day-time"></p>
+          <p id="description"></p>
+        </div>
       </div>
       <form id="your-city">
         <input type="city" id="city-name" placeholder="Enter your city" />
@@ -37,7 +41,7 @@
         <div class="col-4">
           <h2 id="current-temp">
             <span id="units">
-              <a href="#" id="celsius">°C</a> |
+              <a href="#" id="celsius" class="active">°C |</a>
               <a href="#" id="fahrenheit">°F</a>
             </span>
           </h2>
@@ -53,62 +57,7 @@
           </span>
         </div>
       </div>
-      <div class="row">
-        <div class="col-2">
-          <div class="card">
-            Mon 16 Nov
-            <br />
-            <i class="fas fa-cloud-sun"></i>
-            <br />
-            <span class="temp"> 23°C</span>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card">
-            Tue 17 Nov
-            <br />
-            <i class="fas fa-cloud-sun"></i>
-            <br />
-            <span class="temp"> 27°C</span>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card">
-            Wed 18 Nov
-            <br />
-            <i class="fas fa-sun"></i>
-            <br />
-            <span class="temp"> 28°C</span>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card">
-            Thu 19 Nov
-            <br />
-            <i class="fas fa-cloud-sun"></i>
-            <br />
-            <span class="temp"> 25°C</span>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card">
-            Fri 20 Nov
-            <br />
-            <i class="fas fa-sun"></i>
-            <br />
-            <span class="temp"> 26°C</span>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card">
-            Sat 21 Nov
-            <br />
-            <i class="fas fa-cloud-sun-rain"></i>
-            <br />
-            <span class="temp"> 23°C</span>
-          </div>
-        </div>
-      </div>
+      <div class="row weather-forecast" id="forecast"></div>
     </div>
     <span class="git-link">
       <a href="https://github.com/boofx/Weather-App"> Open-source code </a>

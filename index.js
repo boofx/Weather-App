@@ -119,8 +119,11 @@ function retrievePosition(position) {
   let apiKey = "bc0b0c73f0c3380ab48613cc0c13531d";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(url).then(showTempData);
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+  let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&cnt=10&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTempData);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function showFahrenheitTemp(event) {
